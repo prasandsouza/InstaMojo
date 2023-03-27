@@ -25,7 +25,6 @@ function Register() {
             axios.post('https://instamojo.onrender.com/register', user)
                 .then(res => {
                     alert(res.data.message)
-                    window.location.reload(false);
                 })
         }
         else {
