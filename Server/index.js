@@ -62,8 +62,14 @@ app.post('/pay', async (req, res) => {
 })
 
 app.post('/success', async (req, res) => {
-    let dataDB = await User.find({});
-    await User.updateOne({ _id: a }, { Status: 'Paid' });
+    let data = req.body.data
+    if(data==='Failed'){
+        res.send({message:'error in payment'})
+    }
+    else{
+        let dataDB = await User.find({});
+        await User.updateOne({ _id: a }, { Status: 'Paid' });
+    }
 })
 
 
