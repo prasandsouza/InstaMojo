@@ -22,7 +22,7 @@ function Pay(props) {
     const Payment = () => {
         const { name, email, amount, } = data
         if (name && email && amount) {
-            axios.post('http://localhost:5000/pay', { data, backendData })
+            axios.post('https://instamojo.onrender.com/pay', { data, backendData })
                 .then(res => {
                     // alert(typeof(res.data))
                     let dataFromApi = res.data.url

@@ -22,7 +22,7 @@ function Register() {
         console.log('hello')
         const { invoice, Amount, } = user
         if (invoice && Amount) {
-            axios.post('http://localhost:5000/register', user)
+            axios.post('https://instamojo.onrender.com/register', user)
                 .then(res => {
                     alert(res.data.message)
                     window.location.reload(false);

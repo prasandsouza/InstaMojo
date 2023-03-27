@@ -5,7 +5,7 @@ function HomePage() {
     const [invoiceData, setInvoiceData] = useState([])
 
     useEffect(() => {
-        axios.get("http://localhost:5000")
+        axios.get("https://instamojo.onrender.com")
             .then(res => {
                 let value = res.data.data
                 setInvoiceData(value)
