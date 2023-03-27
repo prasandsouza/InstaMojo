@@ -17,7 +17,7 @@ const PORT = 5000;
 
 
 // mongoose connection
-mongoose.connect("mongodb://127.0.0.1:27017/userdata")
+mongoose.connect("mongodb+srv://prasandsouza:1234567890@mern.z8chls7.mongodb.net/?retryWrites=true&w=majority/userdata")
     .then(result => console.log("successfull connection"))
     .catch(result => console.log('error while connecting'))
 
