@@ -44,7 +44,7 @@ app.post('/pay', async (req, res) => {
     let sample = req.body.backendData
     let data = new Inst.PaymentData();
     a = sample._id;
-    const REDIRECT_URL = 'http://localhost:3000/success'
+    const REDIRECT_URL = 'https://instamojo.onrender.com/success'
     data.setRedirectUrl(REDIRECT_URL)
     data.purpose = 'Monk house assessment'
     data.send_email = 'true'

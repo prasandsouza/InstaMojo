@@ -15,7 +15,7 @@ function HomePage() {
     }, [])
     return (
         <div className='flex justify-center items-center'>
-            <div className=' flex flex-col  justify-center items-center w-10/12 h- shadow-xl mt-24   p-3'>
+            <div className=' flex xl:flex-col  justify-center items-center w-10/12 h- shadow-xl mt-24   p-3'>
                 <h1 className='font-extrabold text-3xl text-red-400 italic '> Insta Mojo Payment </h1>
                 <div className='flex item-center flex-col shadow-xl border border-black p-12 w-10/12 mt-12'>
                     <hr className='w-full'/>
