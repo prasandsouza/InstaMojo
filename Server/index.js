@@ -63,7 +63,7 @@ app.post('/pay', async (req, res) => {
 
 app.post('/success', async (req, res) => {
     let paymentStatus = Object.keys(req.body)
-    console.log("payment status", paymentStatus)
+    console.log("payment status", req.body)
     if (paymentStatus.includes('Credit')) {
         console.log("payment status in success", paymentStatus)
         console.log("success")
