@@ -51,6 +51,7 @@ app.post('/pay', async (req, res) => {
     data.amount = amount;
     data.email = email;
     data.name = name;
+    data.webhook='https://instamojo.onrender.com/webhook'
     Inst.createPayment(data, function (error, response) {
         if (error) {
             res.send({ message: 'enter valid data' })
