@@ -19,14 +19,14 @@ function Success() {
     let paymentStatus = values[1]
 
     let valuesFromPayment = { id: payment_id, req_id: payment_req_id, status: paymentStatus }
-    useEffect((paymentStatus) => {
+    useEffect((valuesFromPayment) => {
         axios.post('https://instamojo.onrender.com/success', valuesFromPayment)
             .then(res => {
                 let value = res.data.data
                 console.log(value)
             })
             .catch(err => console.log(err))
-    }, [paymentStatus])
+    }, [valuesFromPayment])
     return (
         <div>
             {paymentStatus === 'Failed' ? <Link to='/' className='text-center text-red-400 border w-full'><h1> Payment is Unsuccessful back to home page </h1></Link> : <Link to='/' className='text-center text-blue-400 border w-full'><h1> Payment is successful back to home page </h1></Link>}
