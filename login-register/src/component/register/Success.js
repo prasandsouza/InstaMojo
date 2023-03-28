@@ -10,7 +10,7 @@ function Success() {
     let values = vars ? vars[1].split('=') : ''
     let paymentStatus = values[1]
     console.log(paymentStatus)
-    useEffect((paymentStatus) => {        
+    useEffect(() => {        
         axios.post('https://instamojo.onrender.com/success', paymentStatus)
             .then(res => {
                 let value = res.data.data
