@@ -70,7 +70,7 @@ app.post('/success', async (req, res) => {
         await User.updateOne({ _id: a }, { Status: 'Paid' });
     } else {
         console.log('fail')
-        res.sendStatus(400);
+        res.send({message:paymenStatus})
     }
 })
 
