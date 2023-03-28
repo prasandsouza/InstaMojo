@@ -61,23 +61,17 @@ app.post('/pay', async (req, res) => {
     })
 })
 
-app.post('/success', async (req, res) => {
-    let paymentStatus = Object.keys(req.body)
-    console.log("payment status", req.body)
-    if (paymentStatus.includes('Credit')) {
-        console.log("payment status in success", paymentStatus)
-        console.log("success")
-        res.sendStatus(200);
-        try {
-            await User.updateOne({ _id: a }, { Status: 'Paid' });
-        } catch (error) {
-            console.log("error occured",error)
-        }
-    } else {
-        console.log('fail')
-        console.log("payment status in error", paymentStatus)
-        res.send({message:paymentStatus})
+app.post('/webhook', async (req, res) => {
+    const paymentId = req.body.payment_id;
+    const paymentStatus = req.body.status;
+    if (paymentStatus === 'Credit') {
+        await User.updateOne({ _id: a }, { Status: 'Paid' });
+
     }
+})
+
+app.post('/success', async (req, res) => {
+    
 })
 
 
