@@ -63,13 +63,16 @@ app.post('/pay', async (req, res) => {
 
 app.post('/success', async (req, res) => {
     let paymentStatus = Object.keys(req.body)
+    console.log("payment status", paymentStatus)
     if (paymentStatus.includes('Credit')) {
+        console.log("payment status in success", paymentStatus)
         console.log("success")
         res.sendStatus(200);
         let dataDB = await User.find({});
         await User.updateOne({ _id: a }, { Status: 'Paid' });
     } else {
         console.log('fail')
+        console.log("payment status in error", paymentStatus)
         res.send({message:paymentStatus})
     }
 })
