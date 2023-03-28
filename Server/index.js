@@ -77,7 +77,6 @@ app.post('/success', async (req, res) => {
                 await User.updateOne({ _id: a }, { Status: 'Paid' });
             } else {
                 // Payment failed
-                console.log(payment);
                 res.sendStatus(400);
             }
         }
