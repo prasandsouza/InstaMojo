@@ -68,8 +68,11 @@ app.post('/success', async (req, res) => {
         console.log("payment status in success", paymentStatus)
         console.log("success")
         res.sendStatus(200);
-        let dataDB = await User.find({});
-        await User.updateOne({ _id: a }, { Status: 'Paid' });
+        try {
+            await User.updateOne({ _id: a }, { Status: 'Paid' });
+        } catch (error) {
+            console.log("error occured",error)
+        }
     } else {
         console.log('fail')
         console.log("payment status in error", paymentStatus)
