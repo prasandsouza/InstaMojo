@@ -15,11 +15,11 @@ function HomePage() {
     }, [])
     return (
         <div className='flex justify-center items-center'>
-            <div className=' flex xl:flex-col  justify-center items-center w-10/12 h- shadow-xl mt-24   p-3'>
+            <div className=' flex xl:flex-col  justify-center items-center xl:w-10/12 xs:w-full shadow-xl mt-24   p-3'>
                 <h1 className='font-extrabold text-3xl text-red-400 italic '> Insta Mojo Payment </h1>
-                <div className='flex item-center flex-col shadow-xl border border-black p-12 w-10/12 mt-12'>
+                <div className='flex item-center flex-col shadow-xl border border-black xl:p-12 xl:w-10/12 xs:w-full  mt-12'>
                     <hr className='w-full'/>
-                    <table>
+                    <table className='xl:text-md xs:text-sm'>
                         <thead >
                             <tr className='bg-gray-100'>
                                 <th className='text-start'>Invoice Number</th>
