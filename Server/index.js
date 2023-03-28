@@ -62,25 +62,16 @@ app.post('/pay', async (req, res) => {
 })
 
 app.post('/success', async (req, res) => {
-    console.log(req.body)
-    const { id, req_id, status } = req.body
-    Inst.getPaymentDetails(id, req_id, async (error, response) => {
-        console.log(response)
-        if (error) {
-            console.log(error);
-            res.sendStatus(500);
-        } else {
-            if (status && status === 'Credit') {
-                // Payment is successful
-                res.sendStatus(200);
-                let dataDB = await User.find({});
-                await User.updateOne({ _id: a }, { Status: 'Paid' });
-            } else {
-                // Payment failed
-                res.sendStatus(400);
-            }
-        }
-    });
+    let paymentStatus = Object.keys(req.body)
+    if (paymentStatus.includes('Credit')) {
+        console.log("success")
+        res.sendStatus(200);
+        let dataDB = await User.find({});
+        await User.updateOne({ _id: a }, { Status: 'Paid' });
+    } else {
+        console.log('fail')
+        res.sendStatus(400);
+    }
 })
 
 
